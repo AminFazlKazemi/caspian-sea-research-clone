@@ -1,0 +1,19 @@
+2026-08-01 06:50:08,280 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 06:50:08,282 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:50:08,285 - INFO - 📂 Using existing git repository at K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone
+2026-08-01 06:50:08,347 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 06:50:08,411 - INFO - 📄 Created .gitignore
+2026-08-01 06:50:08,414 - INFO - 📂 Scanning source (9 files)...
+2026-08-01 06:50:08,418 - INFO - 📊 Sync: New=0, Updated=0, Skipped=9
+2026-08-01 06:50:08,425 - INFO - ⚠️  2 extra item(s) found.
+2026-08-01 06:50:10,762 - INFO - 🗑  DELETE FILE: .sync.lock
+2026-08-01 06:50:10,798 - INFO - 🗑  DELETE FILE: .gitignore
+2026-08-01 06:50:10,799 - INFO - ✅ Deleted 2 items.
+2026-08-01 06:50:11,657 - INFO - 🔍 Checking Python syntax...
+2026-08-01 06:50:11,665 - INFO - ✅ Syntax check passed.
+2026-08-01 06:50:11,665 - INFO - 📦 Staging...
+2026-08-01 06:50:11,734 - INFO - 📝 Committing: Update caspian-sea-research-clone - 2026-08-01 06:50
+2026-08-01 06:50:11,943 - INFO - 📥 Pulling latest changes...
+2026-08-01 06:50:11,989 - ERROR - Pull failed: error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
