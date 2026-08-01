@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{graphicx}
+\begin{document}
+\title{Analysis and Forecast of Caspian Sea Level (2016-2030)}
+\author{Generated from Final Analysis}
+\date{\today}
+\maketitle
+\section{Introduction}
+This report presents the comprehensive analysis of Caspian Sea level variations
+from 1992 to 2025 and a forecast for 2026-2030 based on a weighted linear regression model.
+\section{Methodology}
+A weighted linear regression model was applied to the annual mean sea level data
+from 2016 to 2025. The model is defined as:
+\begin{equation}
+\text{Sea Level} = a \cdot \text{Year} + b
+\end{equation}
+where $a$ is the trend (slope) and $b$ is the intercept.
+\subsection{Model Parameters}
+\begin{table}[h]
+\centering
+\caption{Model parameters}
+\begin{tabular}{lcc}
+\hline
+Parameter & Value & Unit \\
+\hline
+Slope & -0.1550 & m/year \\
+Intercept & 285.36 & m \\
+R-squared & 0.9503 & - \\
+RMSE & 0.1121 & m \\
+\hline
+\end{tabular}
+\end{table}
+\section{Forecast}
+\begin{table}[h]
+\centering
+\caption{Predicted Caspian Sea Level 2026-2030}
+\begin{tabular}{lccc}
+\hline
+Year & Predicted (m) & 95\% CI Lower & 95\% CI Upper \\
+\hline
+2026 & -28.711 & -29.002 & -28.420 \\
+2027 & -28.866 & -29.168 & -28.564 \\
+2028 & -29.021 & -29.335 & -28.707 \\
+2029 & -29.176 & -29.504 & -28.848 \\
+2030 & -29.331 & -29.674 & -28.988 \\
+\hline
+\end{tabular}
+\end{table}
+\section{Conclusion}
+The Caspian Sea level has been decreasing at a rate of
+-0.155 m/year since 2016 (R²=0.95).
+By 2030, the sea level is expected to reach approximately -29.33 m.
+\end{document}

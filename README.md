@@ -1,802 +1,361 @@
-# Caspian Sea Research Project
+# 🌊 Caspian Sea Hydroclimate Research Framework
 
-<div align="center">
+**A comprehensive, reproducible scientific framework for analyzing Caspian Sea Level variability, atmospheric moisture transport, hydroclimatic drivers, and future projections (1940–2025).**
 
-# 🌊 Caspian Sea Hydroclimate Analysis Framework
-
-**A comprehensive scientific framework for analyzing Caspian Sea Level variability, atmospheric moisture transport, hydroclimatic drivers, and future projections (1940–2025).**
-
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-success)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue)
-![LaTeX](https://img.shields.io/badge/Documentation-LaTeX-darkgreen)
-![Status](https://img.shields.io/badge/Status-Research-orange)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-success)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue)](#system-requirements)
+[![LaTeX](https://img.shields.io/badge/Documentation-LaTeX-darkgreen)](https://www.latex-project.org/)
+[![Status](https://img.shields.io/badge/Status-Research-orange)](#)
+[![DOI](https://img.shields.io/badge/DOI-10.xxxx%2Fxxxxx-blue)](https://doi.org/10.xxxx/xxxxx)
 
 ---
 
-*A reproducible research repository integrating atmospheric, hydrological, remote sensing, and statistical analyses of the Caspian Sea.*
+## 📖 Table of Contents
 
-</div>
-
----
-
-# Table of Contents
-
-- Overview
-- Research Background
-- Key Contributions
-- Scientific Objectives
-- Repository Structure
-- Installation
-- System Requirements
-- Quick Start
-
----
-
-# Overview
-
-This repository contains the complete research workflow used for investigating long-term variations in the Caspian Sea Level (CSL) and the hydroclimatic mechanisms controlling these fluctuations.
-
-The project integrates multiple independent observational and reanalysis datasets into a unified processing pipeline capable of reproducing all analyses, figures, statistical results, and projections presented in the accompanying research paper.
-
-Rather than focusing on a single environmental factor, the framework combines atmospheric moisture transport, hydrological observations, remote sensing products, reservoir dynamics, demographic information, and statistical learning methods to provide a comprehensive understanding of Caspian Sea variability.
+- [Overview](#overview)
+- [Research Background](#research-background)
+- [Key Scientific Contributions](#key-scientific-contributions)
+- [Repository Structure](#repository-structure)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Data Sources](#data-sources)
+- [Methodology](#methodology)
+- [Scientific Workflow](#scientific-workflow)
+- [Running the Analyses](#running-the-analyses)
+- [Compiling the Paper](#compiling-the-paper)
+- [Troubleshooting](#troubleshooting)
+- [Citation](#citation)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 ---
 
-# Research Background
+## Overview
 
-The Caspian Sea is the largest enclosed inland water body on Earth and has experienced substantial water-level fluctuations throughout the last century.
+This repository contains the complete, reproducible research workflow used to investigate **long-term variations in the Caspian Sea Level (CSL)** and the **hydroclimatic mechanisms** controlling these fluctuations. The project integrates multiple independent observational and reanalysis datasets—including **ERA5 atmospheric reanalysis**, **hydrological observations**, **satellite altimetry**, **reservoir databases**, and **population data**—into a unified processing pipeline.
 
-During recent decades, accelerated declines in water level have become an important environmental concern because they directly affect
+The framework is capable of reproducing **all analyses, figures, statistical results, and future projections** presented in the accompanying research paper. Rather than focusing on a single environmental factor, this work combines:
 
-- coastal ecosystems,
-- fisheries,
-- navigation,
-- regional infrastructure,
-- freshwater resources,
-- socioeconomic activities,
-- international coastal management.
+- Atmospheric moisture transport
+- Hydrological balance
+- Remote sensing products
+- Human influences (reservoirs, population)
+- Advanced statistical learning methods
 
-Understanding these fluctuations requires integrating atmospheric circulation, terrestrial hydrology, and human influences within a common analytical framework.
-
-This project provides such a framework by combining modern climate reanalysis, satellite observations, hydrological records, and statistical modelling into one reproducible research workflow.
+to provide a **comprehensive understanding** of Caspian Sea variability and its drivers.
 
 ---
 
-# Study Period
+## Research Background
 
-**1940–2025**
+The **Caspian Sea** is the largest enclosed inland water body on Earth and has experienced substantial water‑level fluctuations throughout the last century. During recent decades, **accelerated declines** in water level have become a major environmental concern because they directly affect:
 
-The analyses include long-term historical observations together with recent satellite-era datasets to investigate variability across seasonal, interannual, and multidecadal time scales.
+- Coastal ecosystems and biodiversity
+- Fisheries and aquaculture
+- Navigation and shipping routes
+- Coastal infrastructure and urban areas
+- Freshwater resources and agriculture
+- Socioeconomic activities of surrounding countries
+- International coastal management and geopolitics
 
----
-
-# Scientific Components
-
-The framework combines information from several independent domains.
-
-## Atmospheric Processes
-
-- Integrated Vapor Transport (IVT)
-- Moisture Flux
-- Atmospheric Circulation
-- ERA5 Reanalysis
-
-## Hydrology
-
-- Volga River discharge
-- Basin precipitation
-- Evaporation
-- Water balance
-
-## Remote Sensing
-
-- Satellite altimetry
-- Shoreline observations
-- Surface monitoring
-
-## Human Influences
-
-- Reservoir operation
-- Population growth
-- Anthropogenic pressure
-
-## Statistical Analysis
-
-- Trend analysis
-- Change-point detection
-- Causality analysis
-- Forecast modelling
+Understanding these fluctuations requires integrating **atmospheric circulation**, **terrestrial hydrology**, and **human influences** within a common analytical framework. This project provides such a framework by combining modern climate reanalysis, satellite observations, hydrological records, and statistical modelling into one **fully reproducible research workflow**.
 
 ---
 
-# Major Findings
+## Key Scientific Contributions
 
-According to the analyses presented in this repository,
+1. **Atmospheric Moisture Transport**  
+   Quantification of Integrated Vapor Transport (IVT) into and out of the Caspian basin, revealing a persistent **North Atlantic–Volga transport corridor** and a strong **west‑to‑east asymmetry** in net moisture flux.
 
-- atmospheric moisture follows a persistent North Atlantic–Volga transport corridor;
-- the net atmospheric moisture transport exhibits a strong west-to-east asymmetry;
-- Volga River discharge is identified as the dominant hydroclimatic driver of Caspian Sea Level variability;
-- reservoir surface area has substantially decreased during the last decades;
-- basin population has continuously increased;
-- future scenarios indicate different possible trajectories for Caspian Sea Level through 2030 depending on hydroclimatic conditions.
+2. **Hydrological Controls**  
+   Identification of **Volga River discharge** as the dominant hydroclimatic driver of Caspian Sea Level variability, with secondary contributions from basin precipitation and evaporation.
 
----
+3. **Change‑Point Detection**  
+   Detection of **abrupt hydroclimatic transitions** using three complementary algorithms (binary segmentation, window‑based analysis, and voting strategy), providing robust estimates of regime shifts.
 
-# Scientific Objectives
+4. **Causal Relationships**  
+   Investigation of **directional causal links** among atmospheric, hydrological, and sea‑level variables using statistical causality methods.
 
-The primary objectives of this project are:
+5. **Future Projections**  
+   Estimation of **Caspian Sea Level scenarios through 2030** using Ridge Regression and ensemble learning techniques, with uncertainty quantification.
 
-- quantify atmospheric moisture transport,
-- investigate hydrological controls,
-- identify dominant climate drivers,
-- evaluate long-term variability,
-- detect abrupt hydroclimatic changes,
-- investigate causal relationships,
-- estimate future sea-level evolution,
-- provide reproducible scientific workflows.
+6. **Reproducible Workflow**  
+   A **complete, end‑to‑end** processing pipeline that regenerates all figures, tables, and statistical outputs from raw data, ensuring full reproducibility and transparency.
 
 ---
 
-# Repository Structure
-
-```
+## Repository Structure
 
 caspian-sea-research/
 │
-├── caspian_analysis_fa.tex
-├── caspian_analysis_en.tex
-├── README.md
-├── requirements.txt
-├── compile.py
+├── src/ # All Python analysis scripts
+│ ├── stage1_caspianforecast.py
+│ ├── stage2_caspianforecast.py
+│ ├── ...
+│ ├── final_analysis.py
+│ ├── comprehensive_final_analysis.py
+│ ├── SHAP_OSNAP_Validation.py
+│ ├── extract_precip_from_zarr.py
+│ ├── extract_evap_from_zarr.py
+│ ├── causality.py
+│ ├── change_point.py
+│ ├── ultimate_test.py
+│ ├── analysis_final_code.py
+│ └── ...
 │
-├── figures/
+├── docs/ # LaTeX source and PDF reports
+│ ├── caspian_analysis_fa.tex
+│ ├── caspian_analysis_en.tex
+│ ├── paper_fa.tex
+│ ├── paper_en.tex
+│ ├── analysis_report_final.tex
+│ ├── Caspian_Complete_Report.pdf
+│ ├── caspian_analysis_fa.pdf
+│ ├── caspian_analysis_en.pdf
+│ └── ...
 │
-├── scripts/
+├── data/ # Key datasets (sample & processed)
+│ ├── caspian_sea_level_raw.csv
+│ ├── volga_discharge.csv
+│ ├── AMOC_extended_1870_2023.csv
+│ ├── teleconnection_indices.csv
+│ ├── start_points.csv
+│ ├── border_with_normals.csv
+│ ├── granger_causality_full.csv
+│ ├── predictions.csv
+│ ├── indices_complete.xlsx
+│ ├── Data_compilation.xlsx
+│ └── ...
 │
-├── data/
+├── figures/ # Publication‑quality figures
+│ ├── sea_level_forecast_final.png
+│ ├── shap_summary_final.png
+│ ├── residual_analysis.png
+│ ├── final_forecast.png
+│ ├── correlation_heatmap_kendall.png
+│ ├── correlation_heatmap_spearman.png
+│ ├── prediction_with_ci.png
+│ ├── time_series_all_variables.png
+│ ├── pairplot_analysis.png
+│ ├── wavelet_evaporation.png
+│ ├── wavelet_level_m.png
+│ ├── LSTM_Prediction.png
+│ ├── Extended_Prediction.png
+│ └── ...
 │
-└── manual/
+├── manual/ # User documentation
+│ └── manual.tex
+│
+├── README.md # This file
+├── COMPLETE_GUIDE.md # Comprehensive step‑by‑step guide (English)
+├── requirements.txt # Python dependencies
+├── LICENSE # MIT License
+├── compile.py # One‑click LaTeX compilation
+└── enrich_report.json # Report from file transfer utility
+text
 
-```
-
-## Directory Description
-
-| Folder | Description |
-|---------|-------------|
-| figures | Figures generated throughout the analysis |
-| scripts | Python analysis scripts |
-| data | Sample datasets and GIS layers |
-| manual | User documentation |
-| README.md | Project overview |
-| compile.py | Automatic LaTeX compilation utility |
 
 ---
 
-# Installation
+## Installation
 
-## System Requirements
+### System Requirements
 
-| Component | Recommended |
-|-----------|-------------|
-| Python | 3.10 or newer |
-| Operating System | Windows / Linux / macOS |
-| LaTeX | MiKTeX or TeX Live |
-| Disk Space | ≥ 50 GB (recommended for ERA5 data) |
+| Component | Recommended Specification |
+|-----------|---------------------------|
+| **Python** | 3.10 or newer |
+| **Operating System** | Windows 10/11, Linux (Ubuntu 20.04+), or macOS |
+| **LaTeX** | MiKTeX (Windows) or TeX Live (Linux/macOS) |
+| **Disk Space** | ≥ 50 GB (recommended for ERA5 data storage) |
+| **RAM** | ≥ 16 GB (for parallel processing of large datasets) |
+| **Storage** | SSD recommended for faster I/O |
 
 ---
 
-## Clone Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/caspian-sea-research.git
-
 cd caspian-sea-research
-```
 
----
+Install Python Dependencies
 
-## Install Dependencies
+All required Python packages are listed in requirements.txt. Install them using pip:
+bash
 
-```bash
 pip install -r requirements.txt
-```
 
----
+If you encounter installation errors, ensure your pip is up‑to‑date:
+bash
 
-## Configure CDS API
+pip install --upgrade pip
 
-Create the `.cdsapirc` configuration file using your Copernicus Climate Data Store credentials before downloading ERA5 datasets.
+For GPU‑accelerated machine learning (optional), you may install tensorflow-gpu or torch with CUDA support separately.
+Configure CDS API (for ERA5 download)
 
----
+To download ERA5 data, you need a Copernicus Climate Data Store (CDS) account and API credentials.
 
-# Quick Start
+    Register at https://cds.climate.copernicus.eu
 
-After installation, individual processing modules can be executed independently from the `scripts/` directory.
+    Create a .cdsapirc file in your home directory with the following content:
 
-Subsequent sections describe the available datasets, methodology, analytical workflow, and execution commands in detail.
+ini
 
-# Data Sources
+url: https://cds.climate.copernicus.eu/api/v2
+key: <UID>:<API-Key>
 
-Reliable scientific analysis requires integrating multiple independent datasets representing atmospheric circulation, hydrology, remote sensing, and anthropogenic influences.
+Replace <UID> and <API-Key> with your actual credentials (available in your CDS profile).
+Additional GIS Datasets
 
-This project combines these datasets into a unified processing workflow, ensuring temporal consistency and reproducibility throughout all analyses.
+The analysis requires the following GIS shapefiles (provided in the repository under data/):
 
----
+    LAND3.shp – global land mask
 
-# Atmospheric Reanalysis
+    caspian_polygon_fixed.shp – Caspian Sea polygon (fixed)
 
-## ERA5
+    border_with_normals.csv – boundary segments with outward normals
 
-The primary atmospheric dataset used in this research is the ERA5 global reanalysis produced by the Copernicus Climate Change Service (C3S).
+Ensure these files are present in the data/ directory before running the extraction scripts.
+Quick Start
 
-Monthly datasets covering the period from **1940 to 2024** were utilized throughout the analysis.
+After installation, you can run individual processing modules from the src/ directory. The workflow is modular; each script can be executed independently.
+1. Extract Precipitation from ERA5 Zarr Archives
+bash
 
-### Variables
+python src/extract_precip_from_zarr.py
 
-The following atmospheric variables are required:
+This script reads monthly ERA5 Zarr datasets, extracts precipitation fields, and prepares data for subsequent analyses. Outputs are saved in the data/ directory.
+2. Extract Evaporation
+bash
 
-| Variable | Description |
-|----------|-------------|
-| q | Specific Humidity |
-| u | Zonal Wind Component |
-| v | Meridional Wind Component |
-| ps | Surface Pressure |
-| tp | Total Precipitation |
-| e | Evaporation |
+python src/extract_evap_from_zarr.py
 
-ERA5 provides physically consistent atmospheric fields suitable for long-term climatological investigations and vertically integrated moisture transport calculations.
+Similar to the precipitation extraction, this script processes evaporation fields from ERA5.
+3. Run the Complete Analysis Pipeline
 
----
+To execute the entire workflow and regenerate all figures and statistical outputs:
+bash
 
-# Hydrological Data
+python src/analysis_final_code.py
 
-Hydrological observations complement atmospheric analyses by describing the terrestrial water balance of the Caspian basin.
+This script will run all processing stages sequentially. Depending on the data volume, this may take several hours.
+4. Compile the Scientific Paper
+bash
 
-## Volga River Discharge
-
-The Volga River is the dominant freshwater source of the Caspian Sea.
-
-Observed discharge records are used to investigate:
-
-- annual variability
-- seasonal discharge cycles
-- long-term trends
-- relationships with atmospheric circulation
-- influence on sea-level variability
-
----
-
-## Sea Level Observations
-
-Observed Caspian Sea Level data are compiled from satellite altimetry products and international monitoring services.
-
-These observations provide an independent reference for evaluating long-term hydroclimatic variability.
-
----
-
-# Reservoir Database
-
-Reservoir information is incorporated to quantify anthropogenic regulation of river discharge.
-
-The database includes
-
-- reservoir locations,
-- reservoir surface area,
-- temporal evolution,
-- regulation impacts.
-
-These datasets allow assessment of human-induced modifications to basin hydrology.
-
----
-
-# Population Dataset
-
-Population density is used as an indicator of increasing anthropogenic pressure across the Caspian basin.
-
-Spatial population products provide consistent estimates throughout the study period.
-
----
-
-# Geographic Data
-
-The project uses GIS vector datasets for spatial masking and watershed analysis.
-
-Required shapefiles include
-
-- watershed boundaries,
-- shoreline polygons,
-- basin masks.
-
-These datasets define the computational domain for atmospheric moisture transport calculations.
-
----
-
-# Data Directory
-
-```
-data/
-
-├── LAND3.shp
-├── LAND3.dbf
-├── LAND3.shx
-├── LAND3.prj
-
-├── caspian_polygon_fixed.shp
-├── caspian_polygon_fixed.dbf
-├── caspian_polygon_fixed.shx
-
-├── ERA5/
-
-├── Hydrology/
-
-├── Population/
-
-└── Reservoirs/
-```
-
----
-
-# Methodology
-
-The analysis follows a modular scientific workflow.
-
-```text
-Atmospheric Data
-        │
-        ▼
-ERA5 Processing
-        │
-        ▼
-Moisture Flux Calculation
-        │
-        ▼
-Boundary Flux Integration
-        │
-        ▼
-Hydrological Analysis
-        │
-        ▼
-Statistical Analysis
-        │
-        ▼
-Forecast Model
-        │
-        ▼
-Figures & Tables
-```
-
----
-
-# Vertically Integrated Moisture Flux
-
-Atmospheric moisture transport is quantified using vertically integrated water vapor flux.
-
-The computation integrates moisture transport through the atmospheric column from the surface to the selected upper pressure level.
-
-The resulting fields describe both the magnitude and direction of atmospheric water vapor transport into and out of the Caspian basin.
-
----
-
-# Net Boundary Flux
-
-Boundary fluxes are evaluated independently along the watershed boundary.
-
-Each boundary segment contributes to the total moisture budget according to
-
-- outward normal direction,
-- segment length,
-- integrated moisture transport.
-
-The combined fluxes provide estimates of
-
-- moisture inflow,
-- moisture outflow,
-- net atmospheric contribution.
-
----
-
-# Change Point Detection
-
-Potential abrupt changes in hydroclimatic behaviour are investigated using three complementary approaches.
-
-## Binary Segmentation
-
-Detects statistically significant structural breaks within long-term climate records.
-
----
-
-## Window-Based Analysis
-
-Applies moving temporal windows to identify localized transitions.
-
----
-
-## Voting Strategy
-
-Combines multiple detection algorithms into a consensus estimate, improving robustness and reducing false detections.
-
----
-
-# Forecast Model
-
-Future Caspian Sea Level evolution is estimated using a Ridge Regression model trained on historical hydroclimatic observations.
-
-Predictor variables include atmospheric and hydrological indicators derived throughout the workflow.
-
-Model performance is evaluated using
-
-- coefficient of determination (R²),
-- Root Mean Square Error (RMSE),
-- independent validation procedures.
-
----
-
-# Scientific Workflow
-
-```mermaid
-flowchart TD
-
-A[ERA5 Reanalysis]
-
-B[Hydrological Data]
-
-C[Reservoir Database]
-
-D[Population]
-
-A --> E[Preprocessing]
-
-B --> E
-
-C --> E
-
-D --> E
-
-E --> F[IVT Calculation]
-
-F --> G[Boundary Flux]
-
-G --> H[Hydrological Analysis]
-
-H --> I[Causality]
-
-H --> J[Change Point Detection]
-
-H --> K[Forecast Model]
-
-I --> L[Final Results]
-
-J --> L
-
-K --> L
-```
-
----
-
-# Reproducibility
-
-Every stage of the workflow is designed to be reproducible.
-
-Independent processing modules generate figures, statistical outputs, and tables directly from the original datasets, allowing complete regeneration of the published results.
-
-# Running the Analyses
-
-All analytical workflows are implemented as independent Python modules, allowing each component of the research pipeline to be executed separately or integrated into an automated workflow.
-
----
-
-# Available Processing Modules
-
-| Module | Description |
-|---------|-------------|
-| Precipitation Extraction | Extract precipitation data from monthly ERA5 Zarr datasets |
-| Evaporation Extraction | Extract evaporation fields from ERA5 archives |
-| Causality Analysis | Evaluate causal relationships between hydroclimatic variables |
-| Change Point Detection | Identify abrupt hydroclimatic transitions |
-| Future Projection | Estimate future Caspian Sea Level scenarios |
-| Figure Generation | Produce all publication-quality figures |
-
----
-
-# Extract Precipitation
-
-```bash
-python scripts/extract_precip_from_zarr.py
-```
-
-This module
-
-- reads monthly ERA5 archives,
-- extracts precipitation fields,
-- performs preprocessing,
-- prepares data for subsequent analyses.
-
----
-
-# Extract Evaporation
-
-```bash
-python scripts/extract_evap_from_zarr.py
-```
-
-Outputs include
-
-- evaporation datasets,
-- monthly summaries,
-- processed variables used throughout the analysis.
-
----
-
-# Causality Analysis
-
-```bash
-python scripts/causality.py
-```
-
-The causality module evaluates relationships among atmospheric, hydrological, and sea-level variables.
-
-Typical analyses include
-
-- lag relationships,
-- statistical significance,
-- directional influence,
-- sensitivity analysis.
-
----
-
-# Change Point Detection
-
-```bash
-python scripts/change_point.py
-```
-
-This module identifies abrupt changes in long-term hydroclimatic records using multiple complementary algorithms.
-
-Outputs include
-
-- detected breakpoints,
-- confidence estimates,
-- graphical summaries.
-
----
-
-# Future Projection
-
-```bash
-python scripts/ultimate_test.py
-```
-
-The forecasting workflow estimates future Caspian Sea Level evolution using statistical learning techniques trained on historical hydroclimatic observations.
-
-Model outputs include
-
-- projected sea-level trajectories,
-- uncertainty estimates,
-- scenario comparisons.
-
----
-
-# Generate All Figures
-
-```bash
-python scripts/analysis_final_code.py
-```
-
-Executing this script regenerates every figure used throughout the research paper.
-
-Generated products typically include
-
-- climatological maps,
-- moisture transport vectors,
-- temporal trends,
-- statistical diagrams,
-- validation figures.
-
----
-
-# Compiling the Paper
-
-The repository supports both automated and manual compilation of the accompanying scientific manuscript.
-
----
-
-## One-Click Compilation
-
-```bash
 python compile.py
-```
 
-The compilation utility automatically generates both Persian and English PDF versions of the manuscript while resolving auxiliary build steps whenever possible.
+This will generate both Persian and English PDF versions of the manuscript from the LaTeX sources.
+5. Generate Future Projections
+bash
 
----
+python src/ultimate_test.py
 
-## Manual Compilation
+This script estimates future Caspian Sea Level scenarios using the trained Ridge Regression model.
+Data Sources
 
-### Persian Version
+The project integrates multiple independent datasets to ensure robust and reliable scientific conclusions.
+Atmospheric Reanalysis
 
-```bash
-xelatex caspian_analysis_fa.tex
+ERA5 (Copernicus Climate Change Service, C3S) – the primary atmospheric dataset, covering 1940–2024 at monthly resolution.
 
-bibtex caspian_analysis_fa
+Required variables:
+Variable	Description
+q	Specific Humidity
+u	Zonal Wind Component
+v	Meridional Wind Component
+ps	Surface Pressure
+tp	Total Precipitation
+e	Evaporation
+Hydrological Observations
 
-xelatex caspian_analysis_fa.tex
+    Volga River Discharge – observed daily/monthly discharge from multiple gauging stations, compiled from international databases.
 
-xelatex caspian_analysis_fa.tex
-```
+    Caspian Sea Level – satellite altimetry (Hydroweb) and tide‑gauge records, covering 1940–2025.
 
----
+Remote Sensing
 
-### English Version
+    Satellite altimetry – TOPEX/Poseidon, Jason‑1/2/3, Sentinel‑6.
 
-```bash
-pdflatex caspian_analysis_en.tex
+    Shoreline observations – from various international monitoring services.
 
-bibtex caspian_analysis_en
+Human Influence
 
-pdflatex caspian_analysis_en.tex
+    Reservoir Database – locations, surface area, and temporal evolution of major reservoirs in the Volga basin.
 
-pdflatex caspian_analysis_en.tex
-```
+    Population Density – WorldPop gridded population products (2000–2020).
 
----
+Geographic Data
 
-## Compile User Manual
+    Watershed boundaries – Caspian basin mask.
 
-```bash
-cd manual
+    Shoreline polygons – Caspian Sea polygon (fixed and dynamic versions).
 
-xelatex manual.tex
+Methodology
 
-bibtex manual
+The analysis follows a modular scientific workflow, as illustrated below.
+Atmospheric Moisture Flux Computation
 
-xelatex manual.tex
+Vertically Integrated Moisture Flux (VIMF) is calculated using the equation:
+VIMF=1g∫psfcptopV q dp
+VIMF=g1​∫psfc​ptop​​Vqdp
 
-xelatex manual.tex
-```
+where:
 
----
+    V=(u,v)V=(u,v) is the horizontal wind vector,
 
-# Troubleshooting
+    qq is specific humidity,
 
-## Missing Figures
+    psfcpsfc​ is surface pressure,
 
-If expected figures are not available,
+    ptopptop​ is the upper pressure level (typically 300 hPa),
 
-- verify that all processing scripts completed successfully;
-- regenerate figures using the complete analysis workflow;
-- confirm output directories exist.
+    gg is the acceleration due to gravity.
 
----
+Net Boundary Flux
 
-## LaTeX Compilation Errors
+The net moisture flux across the basin boundary is computed by integrating the inward component of VIMF along the polygon perimeter:
+Fnet=∮VIMF⋅n dl
+Fnet​=∮VIMF⋅ndl
 
-Recommended checks:
+where nn is the outward unit normal vector and dldl is the boundary segment length.
+Change‑Point Detection
 
-- install all required LaTeX packages;
-- ensure Persian packages are available when compiling the Persian manuscript;
-- verify that required fonts are installed;
-- remove auxiliary files before recompilation if necessary.
+Three complementary algorithms are applied:
 
----
+    Binary Segmentation – recursively detects breakpoints in time series.
 
-## Python Errors
+    Window‑Based Analysis – uses sliding windows to identify localized changes.
 
-Common issues include
+    Voting Strategy – combines results from multiple algorithms to increase robustness.
 
-- missing dependencies,
-- incorrect CDS API credentials,
-- unavailable datasets,
-- invalid file paths,
-- missing GIS shapefiles.
+Causal Analysis
 
-Always verify the project structure before running analysis modules.
+Granger causality and Liang–Kleeman information flow are used to investigate directional influences between atmospheric, hydrological, and sea‑level variables.
+Forecast Model
 
----
+A Ridge Regression model is trained on historical data (1940–2024) to project future Caspian Sea Level (2025–2030). Predictors include:
 
-## Performance Recommendations
+    Volga River discharge (annual/seasonal)
 
-Large ERA5 archives may require substantial processing time.
+    Basin precipitation
 
-For improved performance:
+    Evaporation
 
-- execute analyses on SSD storage;
-- increase available system memory when possible;
-- adjust worker configuration for parallel execution;
-- process datasets sequentially if memory is limited.
+    AMOC index
 
----
+    Teleconnection indices (NAO, ENSO)
 
-# Citation
+    Lagged sea‑level values
 
-If this repository contributes to your research, please cite the accompanying scientific publication.
+Model performance is evaluated using R2R2 and RMSE, with independent validation on withheld data.
+Scientific Workflow
+Running the Analyses
 
-```bibtex
-@article{Farjami2026,
-  author  = {Farjami, H. and Fazl Kazemi, A. and Barzgar, N. and Lahijani, H. A. K.},
-  title   = {Moisture Transport and Water Regulation Drive Caspian Sea Level Changes},
-  year    = {2026},
-  journal = {Journal Name},
-  doi     = {DOI}
-}
-```
+All analytical workflows are implemented as independent Python modules in the src/ directory. Below is a detailed description of each key script.
+Precipitation Extraction
 
----
+File: src/extract_precip_from_zarr.py
 
-# License
-
-This project is distributed under the **MIT License**.
-
-See the `LICENSE` file for complete licensing information.
-
----
-
-# Acknowledgements
-
-This work makes use of datasets and services provided by several international organizations and scientific institutions.
-
-The research acknowledges support from
-
-- Iranian National Institute for Oceanography and Atmospheric Science (INIOAS)
-- Iran Meteorological Organization (IRIMO)
-- Copernicus Climate Change Service (C3S)
-- CASPCOM
-- WorldPop Project
-- Hydroweb
-- Iran National Science Foundation (INSF)
-
----
-
-# Contact
-
-For questions regarding the scientific methodology, datasets, or repository, please contact the corresponding author.
-
-**Email**
-
-```
-h.farjami@inio.ac.ir
-```
-
----
-
-# Contributing
-
-Contributions are welcome.
-
-Before submitting a pull request, please
-
-- follow the repository coding style;
-- document methodological changes;
-- include appropriate references;
-- ensure reproducibility of newly added analyses.
-
----
-
-# Future Development
-
-Planned improvements include
-
-- expanded machine learning models,
-- higher-resolution climate datasets,
-- automated validation workflows,
-- interactive visualization dashboards,
-- cloud-native processing pipelines,
-- enhanced uncertainty quantification.
-
----
-
-# Final Remarks
-
-This repository has been developed to provide a transparent, reproducible, and scientifically rigorous framework for investigating the hydroclimatic dynamics of the Caspian Sea.
-
-By integrating atmospheric reanalysis, hydrological observations, remote sensing products, and statistical analyses into a unified workflow, the project enables researchers to reproduce published results, explore new scientific questions, and extend the framework to future investigations.
-
----
-
-<div align="center">
-
-### 🌊 Advancing reproducible hydroclimate research for the Caspian Sea
-
-**If you find this project useful, please consider citing the associated publication.**
-
-</div>
+Purpose: Reads monthly ERA5 Zarr archives, extracts precipitation fields, and outputs processed data for further analysis.

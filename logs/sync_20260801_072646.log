@@ -1,0 +1,103 @@
+2026-08-01 07:26:46,626 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 07:26:46,632 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 07:26:46,641 - INFO - 📂 Using existing git repository at K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone
+2026-08-01 07:26:46,708 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 07:26:46,792 - INFO - 📄 Created .gitignore
+2026-08-01 07:26:46,810 - INFO - 📂 Scanning source (92 files)...
+2026-08-01 07:26:46,822 - INFO - ✅ NEW: enrich_report.json
+2026-08-01 07:26:46,853 - INFO - 🔄 UPDATED (size): README.md
+2026-08-01 07:26:46,896 - INFO - ✅ NEW: data\AMOC_extended_1870_2023.csv
+2026-08-01 07:26:47,039 - INFO - ✅ NEW: data\border_with_normals.csv
+2026-08-01 07:26:47,508 - INFO - ✅ NEW: data\Data_compilation.xlsx
+2026-08-01 07:26:47,516 - INFO - ✅ NEW: data\granger_causality_full.csv
+2026-08-01 07:26:47,625 - INFO - ✅ NEW: data\indices_complete.xlsx
+2026-08-01 07:26:47,808 - INFO - ✅ NEW: data\predictions.csv
+2026-08-01 07:26:47,909 - INFO - ✅ NEW: data\start_points.csv
+2026-08-01 07:26:48,010 - INFO - ✅ NEW: data\teleconnection_indices.csv
+2026-08-01 07:26:48,134 - INFO - ✅ NEW: data\volga_discharge.csv
+2026-08-01 07:26:48,228 - INFO - ✅ NEW: docs\analysis_report_final.tex
+2026-08-01 07:26:48,386 - INFO - ✅ NEW: docs\caspian_analysis_en.tex
+2026-08-01 07:26:48,638 - INFO - ✅ NEW: docs\caspian_analysis_fa.tex
+2026-08-01 07:26:48,650 - INFO - ✅ NEW: docs\caspian_analysis_lake_paper.tex
+2026-08-01 07:26:48,737 - INFO - ✅ NEW: docs\caspian_analysis_paper.tex
+2026-08-01 07:26:48,864 - INFO - ✅ NEW: docs\paper_draft.tex
+2026-08-01 07:26:48,873 - INFO - ✅ NEW: docs\paper_en.tex
+2026-08-01 07:26:48,927 - INFO - ✅ NEW: docs\paper_fa.tex
+2026-08-01 07:26:49,017 - INFO - ✅ NEW: figures\correlation_heatmap_kendall.png
+2026-08-01 07:26:49,134 - INFO - ✅ NEW: figures\correlation_heatmap_spearman.png
+2026-08-01 07:26:49,233 - INFO - ✅ NEW: figures\Extended_Prediction.png
+2026-08-01 07:26:49,397 - INFO - ✅ NEW: figures\Feature_Importance.png
+2026-08-01 07:26:49,405 - INFO - ✅ NEW: figures\final_forecast.png
+2026-08-01 07:26:49,528 - INFO - ✅ NEW: figures\LSTM_Feature_Importance.png
+2026-08-01 07:26:49,664 - INFO - ✅ NEW: figures\LSTM_Prediction.png
+2026-08-01 07:26:50,058 - INFO - ✅ NEW: figures\pairplot_analysis.png
+2026-08-01 07:26:50,302 - INFO - ✅ NEW: figures\prediction_with_ci.png
+2026-08-01 07:26:50,433 - INFO - ✅ NEW: figures\residual_analysis.png
+2026-08-01 07:26:50,526 - INFO - ✅ NEW: figures\seasonal_analysis.png
+2026-08-01 07:26:50,627 - INFO - ✅ NEW: figures\sea_level_forecast_final.png
+2026-08-01 07:26:50,638 - INFO - ✅ NEW: figures\shap_bar_final.png
+2026-08-01 07:26:50,648 - INFO - ✅ NEW: figures\shap_summary_final.png
+2026-08-01 07:26:50,655 - INFO - ✅ NEW: figures\slope_stability.png
+2026-08-01 07:26:50,992 - INFO - ✅ NEW: figures\time_series_all_variables.png
+2026-08-01 07:26:51,041 - INFO - ✅ NEW: figures\wavelet_evaporation.png
+2026-08-01 07:26:51,148 - INFO - ✅ NEW: figures\wavelet_level_m.png
+2026-08-01 07:26:51,382 - INFO - ✅ NEW: figures\wavelet_temperature.png
+2026-08-01 07:26:51,468 - INFO - ✅ NEW: src\analysis_final_code.py
+2026-08-01 07:26:51,555 - INFO - ✅ NEW: src\caspian_sea_level_forecast.py
+2026-08-01 07:26:51,565 - INFO - ✅ NEW: src\causality.py
+2026-08-01 07:26:51,629 - INFO - ✅ NEW: src\change_point.py
+2026-08-01 07:26:51,691 - INFO - ✅ NEW: src\collect_final_files.py
+2026-08-01 07:26:51,889 - INFO - ✅ NEW: src\compiler.py
+2026-08-01 07:26:52,068 - INFO - ✅ NEW: src\comprehensive_final_analysis.py
+2026-08-01 07:26:52,081 - INFO - ✅ NEW: src\create_report.py
+2026-08-01 07:26:52,089 - INFO - ✅ NEW: src\create_report_fa_full_final.py
+2026-08-01 07:26:52,154 - INFO - ✅ NEW: src\cross_correlation.py
+2026-08-01 07:26:52,243 - INFO - ✅ NEW: src\extract_evap_from_zarr.py
+2026-08-01 07:26:52,533 - INFO - ✅ NEW: src\extract_from_tif_with_shp.py
+2026-08-01 07:26:52,629 - INFO - ✅ NEW: src\extract_precip_from_zarr.py
+2026-08-01 07:26:52,772 - INFO - ✅ NEW: src\final_analysis.py
+2026-08-01 07:26:52,839 - INFO - ✅ NEW: src\final_analysis_part1.py
+2026-08-01 07:26:52,848 - INFO - ✅ NEW: src\final_analysis_part2.py
+2026-08-01 07:26:52,912 - INFO - ✅ NEW: src\FINAL_ANALYSIS_READY.py
+2026-08-01 07:26:52,922 - INFO - ✅ NEW: src\flux_visualization_full.py
+2026-08-01 07:26:52,979 - INFO - ✅ NEW: src\forward_selection.py
+2026-08-01 07:26:53,074 - INFO - ✅ NEW: src\generate_english_report.py
+2026-08-01 07:26:53,084 - INFO - ✅ NEW: src\generate_missing_figures.py
+2026-08-01 07:26:53,093 - INFO - ✅ NEW: src\generate_persian_report.py
+2026-08-01 07:26:53,100 - INFO - ✅ NEW: src\generate_report.py
+2026-08-01 07:26:53,108 - INFO - ✅ NEW: src\harmonic_forecast.py
+2026-08-01 07:26:53,118 - INFO - ✅ NEW: src\low_high_years_corrected.py
+2026-08-01 07:26:53,125 - INFO - ✅ NEW: src\post_process_final_analysis.py
+2026-08-01 07:26:53,200 - INFO - ✅ NEW: src\regional_ivt_flux_analysis.py
+2026-08-01 07:26:53,208 - INFO - ✅ NEW: src\regional_ivt_flux_analysis_plots.py
+2026-08-01 07:26:53,217 - INFO - ✅ NEW: src\Ridge_Extended_Validation.py
+2026-08-01 07:26:53,323 - INFO - ✅ NEW: src\sector_side_flux_analysis.py
+2026-08-01 07:26:53,426 - INFO - ✅ NEW: src\SHAP_OSNAP_Validation.py
+2026-08-01 07:26:53,523 - INFO - ✅ NEW: src\spectral.py
+2026-08-01 07:26:53,580 - INFO - ✅ NEW: src\stage10.py
+2026-08-01 07:26:53,645 - INFO - ✅ NEW: src\stage11.py
+2026-08-01 07:26:53,786 - INFO - ✅ NEW: src\stage12.py
+2026-08-01 07:26:53,972 - INFO - ✅ NEW: src\stage1_prepare_border.py
+2026-08-01 07:26:54,094 - INFO - ✅ NEW: src\stage3.py
+2026-08-01 07:26:54,103 - INFO - ✅ NEW: src\stage4.py
+2026-08-01 07:26:54,111 - INFO - ✅ NEW: src\stage5.py
+2026-08-01 07:26:54,178 - INFO - ✅ NEW: src\stage6.py
+2026-08-01 07:26:54,186 - INFO - ✅ NEW: src\stage7.py
+2026-08-01 07:26:54,249 - INFO - ✅ NEW: src\stage8.py
+2026-08-01 07:26:54,259 - INFO - ✅ NEW: src\stage9.py
+2026-08-01 07:26:54,330 - INFO - ✅ NEW: src\temperature_analysis_caspian.py
+2026-08-01 07:26:54,400 - INFO - ✅ NEW: src\ultimate_test.py
+2026-08-01 07:26:54,498 - INFO - ✅ NEW: src\wavelet.py
+2026-08-01 07:26:54,504 - INFO - 📊 Sync: New=83, Updated=1, Skipped=8
+2026-08-01 07:26:54,529 - INFO - ⚠️  3 extra item(s) found.
+2026-08-01 07:26:58,681 - INFO - 🗑  DELETE FILE: folder_snapshot.txt
+2026-08-01 07:26:58,716 - INFO - 🗑  DELETE FILE: .sync.lock
+2026-08-01 07:26:58,769 - INFO - 🗑  DELETE FILE: .gitignore
+2026-08-01 07:26:58,775 - INFO - ✅ Deleted 3 items.
+2026-08-01 07:26:59,549 - INFO - 🔍 Checking Python syntax...
+2026-08-01 07:27:00,345 - ERROR - Syntax error in src\FINAL_ANALYSIS_READY.py:   File "K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone\src\FINAL_ANALYSIS_READY.py", line 128
+    "advanced_analysis(df)
+    ^
+SyntaxError: unterminated string literal (detected at line 128)
+
+2026-08-01 07:27:02,040 - ERROR - ❌ 1 syntax error(s).

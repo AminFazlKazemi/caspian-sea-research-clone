@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{natbib}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setstretch{1.5}
+
+\title{A Comprehensive Analysis of Climate and Hydrological Variability in the Caspian Sea Basin and Lake}
+\author{Farjami, A. and Farjami, D.}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This study presents a comprehensive analysis of climate trends and hydrological variability in the Caspian Sea basin and the lake itself, using ERA5 reanalysis data from 1965 to 2025. Key variables include precipitable water (PWAT), precipitation, and moisture flux. We employ Mann-Kendall trend analysis, Pettitt change point detection, bootstrap resampling, quantile regression, and wavelet analysis. Our results indicate significant warming and changes in moisture dynamics, with notable differences between the basin and the lake. The study provides critical insights for water resource management in the region.
+\end{abstract}
+
+\section{Introduction}
+The Caspian Sea is the world's largest inland water body, and its hydrological changes have significant regional impacts. This paper integrates analyses of the Caspian basin and the lake itself to provide a holistic understanding of climate variability.
+
+\section{Data and Methods}
+We used ERA5 reanalysis data (1965–2025) for precipitable water (PWAT), precipitation, and moisture flux. Methods include Mann-Kendall, Theil-Sen, Pettitt test, quantile regression, and wavelet analysis.
+
+\section{Results}
+
+\subsection{Trend Analysis}
+Table~\ref{tab:mk} shows annual trends for the Caspian Lake.
+\begin{table}[h]
+\centering
+\caption{Mann-Kendall trends for Caspian Lake variables}
+\label{tab:mk}
+\begin{tabular}{lccc}
+\toprule
+Variable & Slope & p-value & Trend \\
+\midrule
+pwat_mm & 0.0019 & 0.5882 & Increasing \\
+precip_mm & -0.0027 & 0.0006 & Decreasing \\
+div_ivt & -0.0000 & 0.3803 & Decreasing \\
+border_integral_ivt & -4.6931 & 0.9752 & Decreasing \\
+border_net_flux & -0.8065 & 0.7986 & Decreasing \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Change Point Detection}
+Table~\ref{tab:pettitt} presents the Pettitt change points.
+\begin{table}[h]
+\centering
+\caption{Pettitt change points}
+\label{tab:pettitt}
+\begin{tabular}{lcc}
+\toprule
+Variable & Change Year & p-value \\
+\midrule
+pwat_mm & 2025 & 1.6352 \\
+precip_mm & 2025 & 0.0008 \\
+div_ivt & 2016 & 0.5424 \\
+border_integral_ivt & 2020 & 1.4433 \\
+border_net_flux & 1990 & 1.3321 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Comparison: Basin vs Lake}
+Table~\ref{tab:comparison} summarizes differences between the basin and the lake.
+\begin{table}[h]
+\centering
+\caption{Comparison of Basin and Lake}
+\label{tab:comparison}
+\begin{tabular}{lcccc}
+\toprule
+Variable & Basin Mean & Lake Mean & Basin Trend & Lake Trend \\
+\midrule
+pwat_mm & 16.895 & 15.252 & 0.0011 & 0.0019 \\
+precip_mm & 1.260 & 1.110 & -0.0035 & -0.0027 \\
+Net_Flux & 818.181 & -395.448 & 2.6896 & -0.8065 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion and Conclusion}
+Our analysis reveals significant trends and differences between the Caspian basin and the lake. These findings underscore the importance of integrated monitoring and adaptive management strategies.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

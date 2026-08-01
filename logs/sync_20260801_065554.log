@@ -1,0 +1,20 @@
+2026-08-01 06:55:54,412 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 06:55:54,416 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:55:54,448 - INFO - 📂 Using existing git repository at K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone
+2026-08-01 06:55:54,512 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 06:55:54,572 - INFO - 📄 Created .gitignore
+2026-08-01 06:55:54,578 - INFO - 📂 Scanning source (9 files)...
+2026-08-01 06:55:54,583 - INFO - 📊 Sync: New=0, Updated=0, Skipped=9
+2026-08-01 06:55:54,591 - INFO - ⚠️  2 extra item(s) found.
+2026-08-01 06:55:59,056 - INFO - 🗑  DELETE FILE: .sync.lock
+2026-08-01 06:55:59,090 - INFO - 🗑  DELETE FILE: .gitignore
+2026-08-01 06:55:59,093 - INFO - ✅ Deleted 2 items.
+2026-08-01 06:55:59,910 - INFO - 🔍 Checking Python syntax...
+2026-08-01 06:55:59,931 - INFO - ✅ Syntax check passed.
+2026-08-01 06:55:59,934 - INFO - 📦 Staging...
+2026-08-01 06:56:00,058 - INFO - 📝 Committing: Update caspian-sea-research-clone - 2026-08-01 06:56
+2026-08-01 06:56:01,011 - INFO - ℹ️  Remote branch 'main' does not exist yet. Skipping pull.
+2026-08-01 06:56:01,015 - INFO - 📤 Pushing to origin/main...
+2026-08-01 06:56:01,806 - INFO - ℹ️  Remote branch 'main' does not exist. Using -u to set upstream.
+2026-08-01 06:56:09,292 - INFO - ✅ DONE!
+2026-08-01 06:56:09,300 - INFO - 📊 Report saved: K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone\logs\report_20260801_065609.json

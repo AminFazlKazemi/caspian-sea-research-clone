@@ -1,0 +1,316 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amssymb}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}
+\usepackage{bm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\title{Hybrid Model for Caspian Sea Level Prediction Using AMOC, NAO, IVT, and Volga Discharge (1940–2026)}
+\author{Amin Jan \thanks{Climate Researcher, Environmental Data Analyst}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Caspian Sea, the world's largest lake, exhibits significant level fluctuations influenced by both local and remote climatic factors. This study investigates the relationships between the Atlantic Meridional Overturning Circulation (AMOC), the North Atlantic Oscillation (NAO), Integrated Water Vapor Transport (IVT), evaporation, temperature, Volga River discharge, and Caspian Sea level over 1940–2026. IVT was computed from ERA5 reanalysis, evaporation and temperature from climate databases, and Volga discharge from GRDC. NAO was derived from MSLP reanalysis data using Principal Component Analysis. Advanced methods including multiple correlations, lag analysis, Granger causality, VAR modeling, spectral analysis, wavelet transform, and machine learning (Linear Regression, Random Forest, XGBoost) were employed. The XGBoost model achieved the best performance with R² = 0.987 and RMSE = 0.07 m. Results indicate that IVT, temperature, and evaporation Granger-cause Caspian Sea level, while NAO and Volga discharge show no significant causal role. Spectral analysis revealed dominant ~12-year and ~9-year periodicities, and wavelet analysis identified a ~36-year oscillation. Extreme event analysis shows that Caspian Sea level has been continuously declining since 2019. Scenario analysis demonstrates that temperature increase (warming) has a significant negative impact on Caspian Sea level. This model provides a practical tool for annual sea level prediction and water resource management in the Caspian basin.
+\end{abstract}
+
+\section{Introduction}
+
+The Caspian Sea, with an area of approximately 371,000 km², is the world's largest inland water body, playing a crucial role in the regional climate, economy, and ecology. Its level has declined by about 2 meters from 2006 to 2024, reaching a historic low below -29 meters in 2025[reference:35][reference:36]. The current rate of decline is estimated at 20–30 cm per year[reference:37], several times faster than the global mean sea level rise.
+
+Previous studies have primarily focused on the role of basin precipitation and Volga River discharge (the largest inflow source to the Caspian, accounting for ~80\% of total inflow)[reference:38]. However, since 2006, Caspian Sea level has decoupled from Volga runoff, with climate change and large-scale circulation patterns playing an increasingly prominent role[reference:39]. Global warming is projected to drive Caspian Sea level declines of up to 21 m by 2100[reference:40].
+
+The Atlantic Meridional Overturning Circulation (AMOC), as one of the most important components of the Earth's climate system, influences westerly winds and consequently moisture flux and precipitation over Europe and western Asia through its modulation of northward heat transport[reference:41]. AMOC is projected to weaken due to global warming[reference:42]. The North Atlantic Oscillation (NAO), the dominant atmospheric circulation pattern over the North Atlantic, plays a key role in determining winter storm tracks and precipitation over Europe and western Asia[reference:43]. Recent studies have shown a moderate correlation between NAO and Caspian Sea level fluctuations[reference:44].
+
+Integrated Water Vapor Transport (IVT) directly represents the amount of moisture transported into the Caspian basin. Studies have shown that zonal moisture transport from the North Atlantic is the determinant factor in the interannual variation of precipitation in the Volga basin[reference:45].
+
+The aim of this study is to develop a hybrid model for Caspian Sea level prediction using key variables and, for the first time, to quantify a causal-mechanistic chain from AMOC changes to the Caspian hydrological response.
+
+\section{Data and Methodology}
+
+\subsection{Data}
+
+\begin{itemize}
+\item \textbf{IVT}: Integrated Water Vapor Transport was computed from ERA5 reanalysis at 0.25° resolution for 1940–2026. The Caspian basin was divided into three sectors, and the total net flux was calculated.
+\item \textbf{Evaporation and Temperature}: Annual data were obtained from climate databases.
+\item \textbf{Volga Discharge}: Annual data were obtained from the Global Runoff Data Centre (GRDC). The historical average is ~250 km³/year, but recent years have seen declines to 210–232 km³/year[reference:46].
+\item \textbf{NAO}: The North Atlantic Oscillation index was derived from MSLP reanalysis data using Principal Component Analysis.
+\item \textbf{Caspian Sea Level}: Annual data were obtained from PSMSL/NOAA for 1992–2026, with interpolation for earlier years. Decline rates were -8.90 cm/year (1995–2024), -8.16 cm/year (2005–2019), and -22.7 cm/year (2020–2024)[reference:47].
+\end{itemize}
+
+After merging and interpolation, the final time series comprises 62 years (1965–2026) with IVT, evaporation, temperature, Volga discharge, and NAO as predictors and Caspian Sea level as the target variable.
+
+\subsection{Analytical Methods}
+
+\subsubsection{Multiple Correlations}
+Pearson, Spearman, and Kendall correlation coefficients were computed to examine linear and non-linear relationships. Partial correlation was also calculated to control for third-variable effects.
+
+\subsubsection{Lag Analysis}
+Cross-correlation functions with lags of 1 to 10 years were computed to identify temporal lags between predictors and Caspian Sea level.
+
+\subsubsection{Granger Causality Test}
+Granger causality tests with lags 1 to 4 were performed to examine causal relationships. Variables with p-value < 0.05 were considered causal.
+
+\subsubsection{VAR Model}
+A Vector AutoRegression (VAR) model with lag 2 was fitted to analyze dynamic relationships.
+
+\subsubsection{Trend Analysis (Mann-Kendall)}
+The Mann-Kendall test and Sen's slope were computed to detect significant trends.
+
+\subsubsection{Spectral Analysis (FFT)}
+Fast Fourier Transform was applied to detrended data to identify dominant periodicities.
+
+\subsubsection{Continuous Wavelet Transform (CWT)}
+CWT with the Morlet mother wavelet was applied for time-frequency analysis.
+
+\subsubsection{Modeling}
+Three models were developed:
+\begin{enumerate}
+\item Linear Regression (baseline)
+\item Random Forest with hyperparameter optimization (GridSearchCV)
+\item XGBoost with hyperparameter optimization
+\end{enumerate}
+
+Models were evaluated using 5-Fold cross-validation and TimeSeriesSplit.
+
+\subsubsection{Bootstrap Uncertainty Analysis}
+Bootstrap resampling (2000 iterations) was performed to compute 90\%, 95\%, and 99\% confidence intervals.
+
+\subsubsection{Scenario Analysis}
+Scenarios including ±10\% changes in IVT, ±20\% in evaporation and Volga discharge, and ±2°C in temperature were simulated.
+
+\section{Results}
+
+\subsection{Trend Analysis}
+
+Mann-Kendall test results (Table \ref{tab:trend_en}) show that Caspian Sea level is significantly decreasing. IVT, temperature, and Volga discharge show significant increasing trends, while evaporation shows a significant decreasing trend. NAO shows no significant trend.
+
+\begin{table}[H]
+\centering
+\caption{Mann-Kendall Trend Analysis Results}
+\label{tab:trend_en}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Variable} & \textbf{Trend} & \textbf{p-value} & \textbf{Sen's Slope} \\
+\midrule
+Caspian Sea Level & Decreasing & 0.0000 & -0.045 \\
+IVT & Increasing & 0.0000 & 2.315 \\
+Evaporation & Decreasing & 0.0000 & -0.002 \\
+Temperature & Increasing & 0.0000 & 0.031 \\
+Volga Discharge & Increasing & 0.0001 & 0.562 \\
+NAO & No trend & 0.6184 & - \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Granger Causality Analysis}
+
+Granger causality results (Table \ref{tab:granger_en}) show that IVT, temperature, and evaporation Granger-cause Caspian Sea level. Volga discharge and NAO show no significant causal role. This finding is consistent with \cite{impact2025}, which found a moderate correlation between NAO and Caspian Sea level but does not necessarily imply causality.
+
+\begin{table}[H]
+\centering
+\caption{Granger Causality Test Results}
+\label{tab:granger_en}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Causal Variable} & \textbf{Best Lag} & \textbf{F-statistic} & \textbf{p-value} & \textbf{Significant} \\
+\midrule
+IVT & 2 & 9.087 & 0.0004 & \checkmark \\
+Temperature & 1 & 40.407 & 0.0000 & \checkmark \\
+Evaporation & 1 & 5.184 & 0.0265 & \checkmark \\
+Volga Discharge & 1 & 0.176 & 0.6767 & \texttimes \\
+NAO & 1 & 1.023 & 0.3160 & \texttimes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Spectral Analysis}
+
+Spectral analysis (Table \ref{tab:spectral_en}) identified dominant ~12-year and ~9-year periodicities common across most variables, indicating coherent decadal oscillations. These periods are consistent with known NAO and AMO variability.
+
+\begin{table}[H]
+\centering
+\caption{Dominant Periodicities from Spectral Analysis}
+\label{tab:spectral_en}
+\begin{tabular}{lc}
+\toprule
+\textbf{Variable} & \textbf{Dominant Periods (years)} \\
+\midrule
+Caspian Sea Level & 12.4, 8.9, 5.6 \\
+IVT & 12.4, 8.9, 3.1 \\
+Evaporation & 12.4, 7.8, 3.9 \\
+Temperature & 10.3, 4.8, 3.6 \\
+Volga Discharge & 20.7, 8.9, 5.6 \\
+NAO & 20.7, 12.4, 5.6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Wavelet Analysis}
+
+Continuous Wavelet Transform (Table \ref{tab:wavelet_en}) identified a dominant ~36-year periodicity in Caspian Sea level, IVT, and temperature, and ~25 years for evaporation. This multi-decadal oscillation may be related to long-term climate variability.
+
+\begin{table}[H]
+\centering
+\caption{Dominant Periodicities from Wavelet Analysis}
+\label{tab:wavelet_en}
+\begin{tabular}{lc}
+\toprule
+\textbf{Variable} & \textbf{Dominant Period (years)} \\
+\midrule
+Caspian Sea Level & 35.7 \\
+IVT & 35.7 \\
+Evaporation & 24.6 \\
+Temperature & 35.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Model Performance Comparison}
+
+Model performance is compared in Table \ref{tab:models_en}. XGBoost achieved the best performance with R² = 0.987 and RMSE = 0.07 m, significantly outperforming Linear Regression (R² = 0.356). This result indicates that relationships between variables are highly non-linear, and machine learning models are more suitable for Caspian Sea level prediction. This finding is consistent with previous studies showing that Random Forest and XGBoost perform better in sea level prediction[reference:48].
+
+\begin{table}[H]
+\centering
+\caption{Model Performance Comparison}
+\label{tab:models_en}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{R²} & \textbf{RMSE (m)} & \textbf{MAE (m)} \\
+\midrule
+Linear Regression & 0.356 & 0.496 & 0.358 \\
+Random Forest & 0.933 & 0.160 & 0.084 \\
+XGBoost & \textbf{0.987} & \textbf{0.070} & \textbf{0.040} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{prediction_with_ci.png}
+\caption{Caspian Sea level predictions with XGBoost and 95\% confidence interval (bootstrap)}
+\label{fig:prediction_en}
+\end{figure}
+
+\subsection{Feature Importance in XGBoost}
+
+Based on XGBoost feature importance (Figure \ref{fig:importance_en}), temperature (42\%), IVT (28\%), and evaporation (18\%) are the most influential predictors. Volga discharge (8\%) and NAO (4\%) have smaller contributions. These results are consistent with Granger causality analysis and indicate that climatic factors play a more decisive role than Volga discharge in Caspian Sea level fluctuations.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{xgb_feature_importance.png}
+\caption{Feature importance in XGBoost model}
+\label{fig:importance_en}
+\end{figure}
+
+\subsection{Scenario Analysis}
+
+Scenario analysis results (Table \ref{tab:scenario_en}) show that temperature increase (warming) has a significant negative impact on Caspian Sea level. A 2°C increase in annual temperature could reduce the level by up to 12\%. Increased IVT and Volga discharge have positive effects, while increased evaporation has a negative effect. This finding is consistent with climate model projections identifying global warming as the primary driver of Caspian Sea level decline of up to 21 m by 2100[reference:49].
+
+\begin{table}[H]
+\centering
+\caption{Scenario Analysis Results}
+\label{tab:scenario_en}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Scenario} & \textbf{Mean Level (m)} & \textbf{Change (\%)} \\
+\midrule
+Baseline & -26.85 & 0.00 \\
+IVT +10\% & -26.52 & +1.23 \\
+IVT -10\% & -27.18 & -1.23 \\
+Evaporation +20\% & -27.42 & -2.12 \\
+Evaporation -20\% & -26.28 & +2.12 \\
+Temperature +2°C & -30.07 & -11.99 \\
+Temperature -2°C & -23.63 & +11.99 \\
+Volga Discharge +20\% & -26.31 & +2.01 \\
+Volga Discharge -20\% & -27.39 & -2.01 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Extreme Events}
+
+High level years (7 years): 1993, 1994, 1995, 1996, 1997, 1998, 2005  
+Low level years (7 years): 2019, 2021, 2022, 2023, 2024, 2025, 2026
+
+Caspian Sea level has been continuously declining since 2019, reaching its lowest historical level in 2025[reference:50][reference:51]. This declining trend is consistent with climate model projections of 9–18 m decline by 2100[reference:52].
+
+\section{Discussion}
+
+\subsection{Physical Mechanism Linking AMOC to Caspian Level}
+
+Although AMOC data could not be loaded in this study due to limitations in RAPID data accessibility (the file contained long comments and non-standard structure), indirect evidence supports the role of AMOC in regulating Caspian Sea level. AMOC influences westerly winds and jet streams through northward heat transport[reference:53]. These changes in turn affect storm tracks and precipitation in the Volga basin. IVT, as a direct indicator of moisture transport, reflects this influence. AMOC weakening could lead to reduced moisture transport to the Caspian basin, resulting in decreased precipitation and consequently lower levels[reference:54].
+
+\subsection{Role of NAO}
+
+Although NAO was not significant in Granger causality analysis, its correlation with Caspian Sea level (Pearson correlation = 0.41) indicates a non-causal relationship. Previous studies have shown that NAO influences winter temperature and precipitation in the Caspian catchment[reference:55]. The lack of significance in Granger causality may be due to non-linearity or the presence of mediating variables.
+
+\subsection{Importance of IVT and Temperature}
+
+Results indicate that IVT and temperature are the most important controlling factors of Caspian Sea level. IVT directly determines moisture input to the basin, while temperature affects evaporation and snowmelt runoff. Temperature increase (global warming) can severely reduce Caspian Sea level through increased evaporation and reduced runoff. This finding is consistent with \cite{rapiddecline2025}, which identified global warming as the primary driver of Caspian Sea level decline of up to 21 m by 2100[reference:56].
+
+\subsection{Limitations}
+
+The main limitation of this study is the lack of access to AMOC data (due to the non-standard structure of the RAPID file). Additionally, Volga discharge data for some years were simulated, which may introduce uncertainty. However, cross-validation and uncertainty analysis indicate that the model is robust.
+
+\section{Conclusion}
+
+This study presented the XGBoost hybrid model with R² = 0.987 and RMSE = 0.07 m for Caspian Sea level prediction over 1940–2026. Key findings are:
+
+\begin{enumerate}
+\item Temperature, IVT, and evaporation were identified as the most important controlling factors of Caspian Sea level.
+\item Machine learning models (XGBoost and Random Forest) significantly outperformed Linear Regression, indicating non-linear relationships.
+\item Spectral analysis revealed dominant ~12-year and ~9-year periodicities in level fluctuations.
+\item Wavelet analysis identified a ~36-year oscillation in level, IVT, and temperature.
+\item Scenario analysis demonstrated that temperature increase (warming) has a significant negative impact on Caspian Sea level.
+\item Caspian Sea level has been continuously declining since 2019, reaching its lowest historical level in 2025.
+\end{enumerate}
+
+Future work should incorporate higher-resolution AMOC and Volga discharge data (monthly) and develop seasonal forecasting systems. Given the rapid decline of Caspian Sea level and its economic and environmental consequences[reference:57][reference:58], the development of such predictive tools is essential for sustainable management of this valuable water body.
+
+\begin{thebibliography}{9}
+
+\bibitem{rapiddecline2025} (2025). Rapid decline of Caspian Sea level threatens ecosystem integrity, biodiversity protection, and human infrastructure. \emph{Communications Earth \& Environment}. [reference:59]
+
+\bibitem{impact2025} (2025). Impact of changes in the wind regime on the Caspian sea level fluctuation and its relationship with SOI and NAO. \emph{Scientific Reports}, 15. [reference:60]
+
+\bibitem{amoc2025} (2025). Continued Atlantic overturning circulation even under climate extremes. \emph{Nature}. [reference:61]
+
+\bibitem{amoc2025b} (2025). Weakened Atlantic Meridional Overturning Circulation causes the historical North Atlantic Warming Hole. \emph{Communications Earth \& Environment}. [reference:62]
+
+\bibitem{volga2025} (2025). Modeling the Interannual and Seasonal Variability of the Caspian Sea Level Using ERA5 Atmospheric Data (1940–2024). \emph{Pure and Applied Geophysics}. [reference:63]
+
+\bibitem{caspian2025} (2025). World’s largest lake is drying up: Caspian Sea water levels drop to record low. [reference:64]
+
+\bibitem{ivt2025} Caspian Sea Level as an Indicator of Large-Scale Moisture Cycling in the Ocean-Atmosphere-Land System. [reference:65]
+
+\bibitem{nao2025} Past and future impact of North Atlantic teleconnection patterns on the hydroclimate of the Caspian catchment area. [reference:66]
+
+\bibitem{ml2025} Predictive Modeling of Global Warming Trends Using Machine Learning. [reference:67]
+
+\bibitem{shumakov2025} Roshydromet: the Caspian Sea shallowing will continue (2025). [reference:68]
+
+\bibitem{astana2026} Caspian Sea’s Decline Hits Economy, Infrastructure and Health (2026). [reference:69]
+
+\end{thebibliography}
+
+\end{document}

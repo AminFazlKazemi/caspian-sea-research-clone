@@ -1,0 +1,6 @@
+cause,effect,best_lag,p_value,significant
+ivt_net,level_m,4,0.0001814295110326886,True
+evaporation,level_m,1,0.02649635249686183,True
+temperature,level_m,1,3.495116992808491e-08,True
+discharge_km3,level_m,1,0.6766781957736335,False
+NAO,level_m,1,0.3160029937872179,False

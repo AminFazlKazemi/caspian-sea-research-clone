@@ -1,0 +1,8 @@
+2026-08-01 07:27:24,950 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 07:27:24,962 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 07:27:24,973 - INFO - 📂 Using existing git repository at K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone
+2026-08-01 07:27:25,042 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 07:27:25,125 - INFO - 📄 Created .gitignore
+2026-08-01 07:27:25,148 - INFO - 📂 Scanning source (92 files)...
+2026-08-01 07:27:25,180 - INFO - 📊 Sync: New=0, Updated=0, Skipped=92
+2026-08-01 07:27:25,213 - INFO - ⚠️  2 extra item(s) found.
