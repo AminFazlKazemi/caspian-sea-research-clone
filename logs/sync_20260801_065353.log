@@ -1,0 +1,18 @@
+2026-08-01 06:53:53,687 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 06:53:53,689 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:53:53,693 - INFO - 📂 Using existing git repository at K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone
+2026-08-01 06:53:53,756 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 06:53:53,820 - INFO - 📄 Created .gitignore
+2026-08-01 06:53:53,824 - INFO - 📂 Scanning source (9 files)...
+2026-08-01 06:53:53,828 - INFO - 📊 Sync: New=0, Updated=0, Skipped=9
+2026-08-01 06:53:53,834 - INFO - ⚠️  2 extra item(s) found.
+2026-08-01 06:53:56,775 - INFO - 🗑  DELETE FILE: .sync.lock
+2026-08-01 06:53:56,807 - INFO - 🗑  DELETE FILE: .gitignore
+2026-08-01 06:53:56,810 - INFO - ✅ Deleted 2 items.
+2026-08-01 06:53:57,462 - INFO - 🔍 Checking Python syntax...
+2026-08-01 06:53:57,487 - INFO - ✅ Syntax check passed.
+2026-08-01 06:53:57,489 - INFO - 📦 Staging...
+2026-08-01 06:53:57,547 - INFO - 📝 Committing: Update caspian-sea-research-clone - 2026-08-01 06:53
+2026-08-01 06:53:57,674 - INFO - 📥 Pulling latest changes with autostash...
+2026-08-01 06:53:58,699 - ERROR - Pull failed: fatal: couldn't find remote ref main
+
