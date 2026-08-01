@@ -1,0 +1,20 @@
+2026-08-01 07:30:14,814 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 07:30:14,817 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 07:30:14,820 - INFO - 📂 Using existing git repository at K:\gozareshha\Dr Farjami\Dr Farjami\140503\Repo\caspian-sea-research-clone
+2026-08-01 07:30:14,885 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 07:30:14,959 - INFO - 📂 Scanning source (91 files)...
+2026-08-01 07:30:14,979 - INFO - 📊 Sync: New=0, Updated=0, Skipped=91
+2026-08-01 07:30:15,000 - INFO - ⚠️  2 extra item(s) found.
+2026-08-01 07:30:19,350 - INFO - 🗑  DELETE FILE: .sync.lock
+2026-08-01 07:30:19,384 - INFO - 🗑  DELETE FILE: .gitignore
+2026-08-01 07:30:19,385 - INFO - ✅ Deleted 2 items.
+2026-08-01 07:30:20,279 - INFO - 🔍 Checking Python syntax...
+2026-08-01 07:30:22,371 - INFO - ✅ Syntax check passed.
+2026-08-01 07:30:22,372 - INFO - 📦 Staging...
+2026-08-01 07:30:29,872 - INFO - 📝 Committing: Update caspian-sea-research-clone - 2026-08-01 07:30
+2026-08-01 07:30:31,145 - INFO - 📥 Pulling latest changes with autostash...
+2026-08-01 07:30:32,455 - ERROR - Pull failed: From https://github.com/AminFazlKazemi/caspian-sea-research-clone
+ * branch            main       -> FETCH_HEAD
+error: unable to unlink old 'logs/sync_20260801_073014.log': Invalid argument
+fatal: could not reset --hard
+
