@@ -1,0 +1,6 @@
+2026-08-01 06:26:42,081 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:26:42,178 - WARNING - ⚠️  Browser login may not work in Spyder.
+2026-08-01 06:26:42,179 - WARNING - 🔑 Please open a terminal (CMD/PowerShell) and run:
+2026-08-01 06:26:42,181 - WARNING -    gh auth login
+2026-08-01 06:26:42,181 - WARNING -    Then come back and run this script again with --yes
+2026-08-01 06:26:42,182 - WARNING -    OR use --token option with a personal access token.

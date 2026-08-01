@@ -1,0 +1,6 @@
+2026-08-01 06:20:42,395 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:20:42,410 - INFO - 🔑 Logging in via browser (one-time)...
+2026-08-01 06:21:03,310 - ERROR - Browser login failed: 
+! First copy your one-time code: 7B1F-05A3
+Open this URL to continue in your web browser: https://github.com/login/device
+

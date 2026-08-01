@@ -1,0 +1,3 @@
+2026-08-01 06:23:38,704 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:23:38,709 - ERROR - Lock file exists (PID 11192). Another instance may be running.
+2026-08-01 06:23:38,712 - ERROR - Another instance is running.

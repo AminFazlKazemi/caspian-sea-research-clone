@@ -1,0 +1,7 @@
+2026-08-01 06:44:21,678 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 06:44:21,681 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:44:21,684 - INFO - 🔑 Logging in with token...
+2026-08-01 06:44:22,997 - ERROR - ❌ Token login failed: error validating token: missing required scope 'read:org'
+
+2026-08-01 06:44:22,998 - ERROR -    Please check your token in: K:\kazemi\github_token.txt
+2026-08-01 06:44:22,999 - ERROR - ❌ Target preparation failed.

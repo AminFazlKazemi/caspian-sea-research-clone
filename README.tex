@@ -1,0 +1,471 @@
+\documentclass[12pt,a4paper]{article}
+
+% ============================================================
+% بسته‌ها
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{lipsum} % فقط برای تست
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+% ============================================================
+% تنظیمات هدر و فوتر
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Caspian Sea Research}}
+\fancyhead[R]{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================================================
+% تنظیمات کدهای پایتون
+% ============================================================
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=Python
+}
+\lstset{style=mystyle}
+
+% ============================================================
+% عنوان
+% ============================================================
+\title{\textbf{Caspian Sea Research Project}\\ \Large{Complete Documentation and User Guide}}
+\author{
+    Hossein Farjami \thanks{Corresponding author: \texttt{h.farjami@inio.ac.ir}} \\
+    \small{Research Institute of Caspian Sea Studies}
+    \and
+    Amir Fazl Kazemi \\
+    \small{Department of Climate Science, University of Tehran}
+    \and
+    Navid Barzgar \\
+    \small{Research Institute of Caspian Sea Studies}
+    \and
+    Hamid A. K. Lahijani \\
+    \small{Research Institute of Caspian Sea Studies}
+}
+\date{Version 1.0 – \today}
+
+% ============================================================
+% شروع سند
+% ============================================================
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\setcounter{page}{1}
+
+\section*{Preface}
+This document serves as the complete user guide and documentation for the Caspian Sea Research Project. It provides:
+\begin{itemize}
+    \item An overview of the research and its findings.
+    \item Detailed instructions for reproducing all analyses.
+    \item Data sources and preprocessing steps.
+    \item Explanation of the methodology and models.
+    \item Compilation guide for the paper and user manual.
+\end{itemize}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+% ۱. معرفی پروژه
+% ============================================================
+\section{Introduction}
+
+\subsection{Research Background}
+The Caspian Sea, the world's largest inland water body, has experienced dramatic water level fluctuations over the past century. Recent accelerated declines have raised concerns about environmental, economic, and geopolitical impacts on the five littoral states.
+
+This research project presents a comprehensive analysis of Caspian Sea Level (CSL) variability from 1940 to 2025, integrating:
+\begin{itemize}
+    \item Atmospheric moisture transport (IVT) from ERA5 reanalysis.
+    \item Hydrological data (Volga River discharge, precipitation, evaporation).
+    \item Satellite altimetry and remote sensing.
+    \item Reservoir dynamics and population pressure.
+\end{itemize}
+
+\subsection{Key Findings}
+\begin{itemize}
+    \item IVT follows a persistent North Atlantic--Volga moisture corridor.
+    \item Net IVT shows strong west-to-east asymmetry (inflow: 1840 ± 320 kg s⁻¹; outflow: −2650 ± 410 kg s⁻¹).
+    \item Volga discharge, modulated by North Atlantic SST, is the primary driver of CSL (r = 0.62, p < 0.01).
+    \item Reservoir surface area declined by 59\% (2000--2025), while basin population grew from 77.6 to 100.1 million.
+    \item Projections indicate potential CSL rise of 0--2.76 m by 2030 under different scenarios.
+\end{itemize}
+
+\subsection{Repository Structure}
+\begin{longtable}{p{4cm} p{10cm}}
+\toprule
+\textbf{Folder/File} & \textbf{Description} \\
+\midrule
+\texttt{caspian\_analysis\_fa.tex} & Persian version of the paper (LaTeX) \\
+\texttt{caspian\_analysis\_en.tex} & English version of the paper (LaTeX) \\
+\texttt{figures/} & All figures used in the paper \\
+\texttt{data/} & Sample data and shapefiles \\
+\texttt{scripts/} & Python scripts for analysis \\
+\texttt{manual/} & User manual (this document in LaTeX) \\
+\texttt{compile.py} & One-click LaTeX compiler \\
+\texttt{requirements.txt} & Python dependencies \\
+\texttt{README.md} & Short overview (GitHub) \\
+\bottomrule
+\end{longtable}
+
+% ============================================================
+% ۲. نصب و راه‌اندازی
+% ============================================================
+\section{Installation and Setup}
+
+\subsection{System Requirements}
+\begin{itemize}
+    \item \textbf{Python 3.10+} (with pip)
+    \item \textbf{LaTeX distribution}: MiKTeX (Windows) or TeX Live (Linux/macOS)
+    \item \textbf{Sufficient disk space}: at least 50 GB for ERA5 data (optional)
+    \item \textbf{CDS account}: for downloading ERA5 data (\url{https://cds.climate.copernicus.eu/})
+\end{itemize}
+
+\subsection{Step-by-Step Installation}
+\subsubsection{1. Clone the Repository}
+\begin{lstlisting}[language=bash]
+git clone https://github.com/your-username/caspian-sea-research.git
+cd caspian-sea-research
+\end{lstlisting}
+
+\subsubsection{2. Install Python Dependencies}
+\begin{lstlisting}[language=bash]
+pip install -r requirements.txt
+\end{lstlisting}
+
+\subsubsection{3. Install LaTeX Packages}
+For MiKTeX, open the MiKTeX Console and install missing packages on-the-fly. For TeX Live:
+\begin{lstlisting}[language=bash]
+sudo apt-get install texlive-full  # Ubuntu/Debian
+\end{lstlisting}
+
+\subsubsection{4. Configure CDS API}
+Create a file \texttt{\textasciitilde/.cdsapirc} with your credentials:
+\begin{lstlisting}
+url: https://cds.climate.copernicus.eu/api/v2
+key: YOUR_UID:YOUR_API_KEY
+\end{lstlisting}
+
+% ============================================================
+% ۳. داده‌ها
+% ============================================================
+\section{Data Sources and Preprocessing}
+
+\subsection{ERA5 Reanalysis}
+Monthly ERA5 data (1940–2024) were obtained from the Copernicus Climate Change Service (C3S). Key variables:
+\begin{itemize}
+    \item Specific humidity (q)
+    \item Zonal wind (u) and meridional wind (v)
+    \item Surface pressure (ps)
+    \item Total precipitation (tp)
+    \item Evaporation (e)
+\end{itemize}
+
+\subsection{Hydrometeorological Data}
+\begin{itemize}
+    \item \textbf{Volga River discharge}: CASPCOM (\url{https://www.caspcom.com})
+    \item \textbf{Sea level}: Satellite altimetry (Hydroweb, Copernicus Marine Service)
+\end{itemize}
+
+\subsection{Reservoir and Population Data}
+\begin{itemize}
+    \item \textbf{Reservoirs}: Compiled from multiple sources (Lehner et al., 2011)
+    \item \textbf{Population}: WorldPop 1 km resolution (\url{https://hub.worldpop.org/})
+\end{itemize}
+
+\subsection{Shapefiles}
+Place the following files in the \texttt{data/} directory:
+\begin{itemize}
+    \item \texttt{LAND3.shp} – Caspian watershed boundary
+    \item \texttt{caspian\_polygon\_fixed.shp} – Caspian Sea shoreline
+\end{itemize}
+
+% ============================================================
+% ۴. روش‌شناسی
+% ============================================================
+\section{Methodology}
+
+\subsection{Vertically Integrated Moisture Flux (VIMF)}
+The VIMF quantifies the horizontal transport of atmospheric water vapor:
+\begin{equation}
+\mathbf{Q} = \frac{1}{g} \int_{P_t}^{P_s} q \, \mathbf{V} \, dp
+\end{equation}
+where:
+\begin{itemize}
+    \item $q$ = specific humidity
+    \item $\mathbf{V}$ = horizontal wind vector
+    \item $P_s$ = surface pressure
+    \item $P_t$ = top of integration (250 hPa)
+    \item $g$ = gravitational acceleration
+\end{itemize}
+
+\subsection{Net IVT Across Boundaries}
+For each boundary segment, the net flux is:
+\begin{equation}
+Q_{\text{net}} = \mathbf{Q} \cdot \mathbf{n} \cdot L
+\end{equation}
+where $\mathbf{n}$ is the outward unit normal and $L$ is the segment length.
+
+\subsection{Change Point Detection}
+We employed three independent methods:
+\begin{enumerate}
+    \item Binary Segmentation
+    \item Window-based method
+    \item Voting mechanism
+\end{enumerate}
+
+\subsection{Forecast Model}
+A Ridge Regression model was trained on annual hydroclimatic data (1941–2024):
+\begin{equation}
+\text{CSL}_t = \beta_0 + \beta_1 \cdot \text{CSL}_{t-1} + \beta_2 \cdot Q_{\text{Volga},t} + \beta_3 \cdot \text{IVT}_t + \epsilon_t
+\end{equation}
+The model achieved R² = 0.9876 and RMSE = 0.0324 m.
+
+% ============================================================
+% ۵. اجرای تحلیل‌ها
+% ============================================================
+\section{Running the Analyses}
+
+\subsection{Precipitation Extraction from Zarr}
+\begin{lstlisting}[language=bash]
+python scripts/extract_precip_from_zarr.py
+\end{lstlisting}
+
+\subsection{Evaporation Extraction}
+\begin{lstlisting}[language=bash]
+python scripts/extract_evap_from_zarr.py
+\end{lstlisting}
+
+\subsection{Causality Analysis}
+\begin{lstlisting}[language=bash]
+python scripts/causality.py
+\end{lstlisting}
+
+\subsection{Change Point Detection}
+\begin{lstlisting}[language=bash]
+python scripts/change_point.py
+\end{lstlisting}
+
+\subsection{Future Projections}
+\begin{lstlisting}[language=bash]
+python scripts/ultimate_test.py
+\end{lstlisting}
+
+\subsection{Generate All Figures}
+\begin{lstlisting}[language=bash]
+python scripts/analysis_final_code.py
+\end{lstlisting}
+
+% ============================================================
+% ۶. کامپایل مقاله
+% ============================================================
+\section{Compiling the Paper}
+
+\subsection{One-Click Compilation}
+Run the compilation script:
+\begin{lstlisting}[language=bash]
+python compile.py
+\end{lstlisting}
+This will generate both Persian and English PDFs in the root directory.
+
+\subsection{Manual Compilation}
+\subsubsection{Persian Version (requires XeLaTeX)}
+\begin{lstlisting}[language=bash]
+xelatex caspian_analysis_fa.tex
+bibtex caspian_analysis_fa
+xelatex caspian_analysis_fa.tex
+xelatex caspian_analysis_fa.tex
+\end{lstlisting}
+
+\subsubsection{English Version}
+\begin{lstlisting}[language=bash]
+pdflatex caspian_analysis_en.tex
+bibtex caspian_analysis_en
+pdflatex caspian_analysis_en.tex
+pdflatex caspian_analysis_en.tex
+\end{lstlisting}
+
+\subsection{Compile the User Manual}
+\begin{lstlisting}[language=bash]
+cd manual
+xelatex manual.tex
+bibtex manual
+xelatex manual.tex
+xelatex manual.tex
+\end{lstlisting}
+
+% ============================================================
+% ۷. عیب‌یابی
+% ============================================================
+\section{Troubleshooting}
+
+\subsection{Missing Figures}
+If figures are missing, the \texttt{compile.py} script creates placeholders. To generate real figures, run the analysis scripts first.
+
+\subsection{LaTeX Errors}
+Ensure all required LaTeX packages are installed. For the Persian version, \texttt{xepersian} and \texttt{bidi} are essential. If you encounter font errors, install the \texttt{XB Niloofar} font or change the font in the \texttt{.tex} file.
+
+\subsection{Python Errors}
+\begin{itemize}
+    \item Check that all dependencies are installed.
+    \item For CDS API, ensure your credentials are configured correctly.
+    \item For shapefile reading, verify that the files are in the correct path.
+\end{itemize}
+
+\subsection{Performance Issues}
+Processing 721 monthly Zarr files may take time. Use the \texttt{MAX\_WORKERS} parameter in the scripts to control parallelism.
+
+% ============================================================
+% ۸. استناد و مجوز
+% ============================================================
+\section{Citation and License}
+
+\subsection{How to Cite}
+If you use this package or its data in your research, please cite:
+\begin{verbatim}
+Farjami, H., Fazl Kazemi, A., Barzgar, N., Lahijani, H. A. K. (2026).
+Moisture Transport and Water Regulation Drive Caspian Sea Level Changes.
+[Journal Name, volume, pages]. DOI: ...
+\end{verbatim}
+
+\subsection{License}
+This project is licensed under the MIT License – see the \texttt{LICENSE} file for details.
+
+% ============================================================
+% ۹. Acknowledgments
+% ============================================================
+\section{Acknowledgments}
+We thank the following institutions and projects for providing open data and support:
+\begin{itemize}
+    \item Iranian National Institute for Oceanography and Atmospheric Science (INIOAS)
+    \item Iran Meteorological Organization (IRIMO)
+    \item Copernicus Climate Change Service (C3S)
+    \item CASPCOM for sea level data
+    \item WorldPop project for population data
+    \item Hydroweb for satellite altimetry
+\end{itemize}
+This research was partially supported by the Iran National Science Foundation (Project No. INSF-4012973).
+
+% ============================================================
+% ضمیمه: مثال کد
+% ============================================================
+\appendix
+\section{Appendix: Example Python Code}
+
+\subsection{Granger Causality Test}
+\begin{lstlisting}[caption={Granger causality test with NumPy}, label=lst:granger]
+def granger_test_numpy(data, target_idx=0, maxlag=12):
+    n, p = data.shape
+    results = {}
+    for var_idx in range(p):
+        if var_idx == target_idx:
+            continue
+        best_p = 1.0
+        best_lag = 1
+        for lag in range(1, maxlag + 1):
+            n_obs = n - lag
+            X = np.zeros((n_obs, lag * 2))
+            for i in range(lag):
+                X[:, i] = data[lag-i-1:n-i-1, target_idx]
+                X[:, lag + i] = data[lag-i-1:n-i-1, var_idx]
+            y_obs = data[lag:, target_idx]
+            if n_obs < lag * 2 + 5:
+                continue
+            model_full = LinearRegression()
+            model_full.fit(X, y_obs)
+            rss_full = np.sum((y_obs - model_full.predict(X))**2)
+            X_restricted = X[:, :lag]
+            model_rest = LinearRegression()
+            model_rest.fit(X_restricted, y_obs)
+            rss_rest = np.sum((y_obs - model_rest.predict(X_restricted))**2)
+            df1 = lag
+            df2 = n_obs - 2 * lag - 1
+            if df2 > 0 and rss_rest > 0:
+                f_stat = ((rss_rest - rss_full) / df1) / (rss_full / df2)
+                p_val = 1 - stats.f.cdf(f_stat, df1, df2)
+                if p_val < best_p:
+                    best_p = p_val
+                    best_lag = lag
+        results[var_names[var_idx]] = {
+            'best_p_value': best_p,
+            'best_lag': best_lag
+        }
+    return results
+\end{lstlisting}
+
+\subsection{TVP Model (Rolling Window)}
+\begin{lstlisting}[caption={TVP model with rolling window}, label=lst:tvp]
+def tvp_model(y, window_size=36, make_features_func=None):
+    n = len(y)
+    predictions = np.full(n, np.nan)
+    coefficients = []
+    for i in range(window_size, n):
+        start = max(0, i - window_size)
+        X_win = make_features_func(start, i)
+        y_win = y[start:i]
+        if len(y_win) > 12:
+            model = LinearRegression()
+            model.fit(X_win, y_win)
+            X_pred = make_features_func(i, i+1)
+            predictions[i] = model.predict(X_pred)[0]
+            coefficients.append(model.coef_)
+    predictions[:window_size] = np.mean(y[:window_size])
+    return predictions, np.array(coefficients)
+\end{lstlisting}
+
+% ============================================================
+% پایان
+% ============================================================
+\section*{Final Remarks}
+Thank you for using this research package. We hope it facilitates your work and contributes to a better understanding of the Caspian Sea's hydrological dynamics. For questions or support, please contact the corresponding author at \texttt{h.farjami@inio.ac.ir}.
+
+\vspace{1cm}
+\hfill \textbf{— End of Document —}
+
+\end{document}
