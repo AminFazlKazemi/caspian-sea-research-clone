@@ -1,0 +1,32 @@
+2026-08-01 06:48:06,215 - INFO - ✅ Token loaded from: K:\kazemi\github_token.txt
+2026-08-01 06:48:06,217 - INFO - ✅ Found gh at: J:\software\gh_2.97.0_windows_amd64\bin\gh.exe
+2026-08-01 06:48:06,226 - INFO - 🔑 Logging in with token...
+2026-08-01 06:48:07,226 - INFO - ✅ Logged in with token.
+2026-08-01 06:48:08,109 - INFO - 📦 Creating repository 'caspian-sea-research-clone'...
+2026-08-01 06:48:10,463 - INFO - ✅ Repository 'caspian-sea-research-clone' created.
+2026-08-01 06:48:10,465 - INFO - 📁 Initializing git in existing directory...
+2026-08-01 06:48:12,569 - INFO - 🚀 Starting sync for branch 'main'
+2026-08-01 06:48:12,617 - INFO - 📄 Created .gitignore
+2026-08-01 06:48:12,621 - INFO - 📂 Scanning source (9 files)...
+2026-08-01 06:48:12,667 - INFO - ✅ NEW: compile.py
+2026-08-01 06:48:12,672 - INFO - ✅ NEW: introduction.bbl
+2026-08-01 06:48:12,745 - INFO - ✅ NEW: introduction.blg
+2026-08-01 06:48:12,847 - INFO - ✅ NEW: introduction.tex
+2026-08-01 06:48:12,872 - INFO - ✅ NEW: LICENSE
+2026-08-01 06:48:12,911 - INFO - ✅ NEW: README.docx
+2026-08-01 06:48:12,959 - INFO - ✅ NEW: README.md
+2026-08-01 06:48:12,987 - INFO - ✅ NEW: README.tex
+2026-08-01 06:48:12,992 - INFO - ✅ NEW: requirements.txt
+2026-08-01 06:48:12,994 - INFO - 📊 Sync: New=9, Updated=0, Skipped=0
+2026-08-01 06:48:13,000 - INFO - ⚠️  2 extra item(s) found.
+2026-08-01 06:48:18,382 - INFO - 🗑  DELETE FILE: .sync.lock
+2026-08-01 06:48:18,426 - INFO - 🗑  DELETE FILE: .gitignore
+2026-08-01 06:48:18,428 - INFO - ✅ Deleted 2 items.
+2026-08-01 06:48:20,459 - INFO - 🔍 Checking Python syntax...
+2026-08-01 06:48:20,499 - INFO - ✅ Syntax check passed.
+2026-08-01 06:48:20,501 - INFO - 📦 Staging...
+2026-08-01 06:48:20,647 - INFO - 📝 Committing: Update caspian-sea-research-clone - 2026-08-01 06:48
+2026-08-01 06:48:20,863 - INFO - 📥 Pulling latest changes...
+2026-08-01 06:48:20,910 - ERROR - Pull failed: error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
