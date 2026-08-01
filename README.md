@@ -88,6 +88,7 @@ Understanding these fluctuations requires integrating **atmospheric circulation*
 
 ## Repository Structure
 
+```text
 caspian-sea-research/
 │
 ├── src/ # All Python analysis scripts
@@ -158,7 +159,7 @@ text
 
 
 ---
-
+```
 ## Installation
 
 ### System Requirements
